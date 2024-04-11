@@ -4,8 +4,9 @@ import {
   createContact,
   updateContact,
   deleteContact,
-  getContactById
+  getContactById,
 } from "../controllers/contactController.js";
+// import { validateUser } from "../middleware/validateUser.js";
 
 const router = express.Router();
 

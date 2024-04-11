@@ -86,3 +86,8 @@ export const loginUser = asyncHandler(async (req, res) => {
     res.status(400).json({ error: "Incorrect password" });
   }
 });
+
+export const currentUser = asyncHandler(async (req, res) => {
+  const currentUser = req.currentUser;
+  res.status(200).json({ currentUser });
+});
