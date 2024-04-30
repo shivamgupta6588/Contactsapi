@@ -6,6 +6,7 @@ import errorHandler from "./middleware/errorHandler.js";
 import main from "./config/dbConnection.js";
 import cookieParser from "cookie-parser";
 import { validateUser } from "./middleware/validateUser.js";
+import { sendEmail } from "./middleware/mailer.js";
 const app = express();
 main();
 
@@ -18,6 +19,7 @@ app.use(cookieParser());
 
 app.use("/api/getcontacts", validateUser, contactRoutes);
 app.use("/api/getusers", userRoutes);
+app.post("/api/sendmail",sendEmail);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
